@@ -10,14 +10,16 @@ hold on
 
 % Fit least-squares estimator
 model = leastSquares(X,y);
+% z should be a diagonal matrix
 z = ones(1,500);
 z(1:400) = 1;
 z(401:500) = 0.1;
+z = diag(z);
 model_new = weightedLeastSquares(X,y,z);
 
 % Draw model prediction
 Xsample = [min(X):.01:max(X)]';
 yHat = model.predict(model,Xsample);
 yHat_new = model_new.predict(model_new,Xsample);
-plot(Xsample,yHat,'g-');
+%plot(Xsample,yHat,'g-');
 plot(Xsample,yHat_new,'r-');

@@ -32,5 +32,7 @@ yhat = Xtest*w;
 end
 
 function [f,g] = funObj(w,X,y,epsilon)
+    f = (1/2)*sum(sqrt((X*w-y).^2 + epsilon));
+    g = X'*(X*w - y)/sum(sqrt((X*w-y).^2 + epsilon));
 
 end
