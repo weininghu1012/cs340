@@ -18,7 +18,7 @@ model_new = robustRegressionGradient(X,y,epsilon);
 
 % Draw model prediction
 Xsample = [min(X):.01:max(X)]';
-yHat = model.predict(model,Xsample);
+%yHat = model.predict(model,Xsample);
 yHat_new = model.predict(model_new,Xsample);
 
 %plot(Xsample,yHat,'g-');
