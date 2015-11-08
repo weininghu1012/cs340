@@ -10,11 +10,11 @@ load animals.mat
 % gname(animals);
 
 %applying PCA
-sigma = X'*X;
-[U,S,V] = svd(sigma);
+%sigma = X'*X;
+[U,S,V] = svd(X);
 W = V(:,1:2)';
 Z = X*W';
-imagesc(Z);
+imagesc(Z*W);
 figure;
     plot(Z(:,1),Z(:,2),'.');
     hold on;
