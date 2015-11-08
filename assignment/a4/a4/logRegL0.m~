@@ -30,11 +30,7 @@ while minScore ~= oldScore
         ind_new = union(ind,i);
         % fit new model
         w_new = findMin(@logisticLoss,w0(ind_new),maxFunEvals,verbose,X(:,ind_new),y);
-        score_new = logisticLoss(w_new,X(:,ind_new),y) + lambda*length(w_new);
-        if (score_new < minScore)
-            minScore = score_new;
-            minInd = ind_new;
-        end    
+        score_new = 
         
     end
     ind = minInd;
