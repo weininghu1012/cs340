@@ -12,6 +12,6 @@ end
 
 function [f,g] = logisticLoss(w,X,y,lambda)
 yXw = y.*(X*w);
-f = sum(log(1 + exp(-yXw))) + (lambda/2)*norm(w,1); % Function value
+f = sum(log(1 + exp(-yXw))); % + (lambda/2)*norm(w,1); % Function value
 g= -X'*(y./(1+exp(yXw))); % Gradient
 end
